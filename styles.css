@@ -59,19 +59,35 @@ nav {
 
 /* Container to wrap nav elements */
 .nav-container {
+  position: relative;
   max-width: 1200px;
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Default: center nav-links on desktop */
   padding: 0 1rem;
 }
 
-/* For screens above mobile, center the nav-links */
+/* Position the profile icon to the left on desktop */
 @media screen and (min-width: 769px) {
-  .nav-container {
-    justify-content: center;
+  .profile-link {
+    position: absolute;
+    left: 1rem;
   }
+}
+
+/* Profile Icon Styles */
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff; /* Light mode background */
+  border: 2px solid var(--button-bg-light);
+  object-fit: cover;
+}
+body.dark-mode .profile-icon {
+  background-color: #222222;
+  border-color: var(--button-bg-dark);
 }
 
 /* Nav Links as an Unordered List */
@@ -113,12 +129,10 @@ nav {
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
 }
-
 body.dark-mode .menu-toggle {
   background-color: var(--button-bg-dark);
   color: var(--button-text-dark);
 }
-
 .menu-toggle:hover {
   background-color: #45a049;
   transform: scale(1.05);
@@ -131,13 +145,23 @@ body.dark-mode .menu-toggle {
     display: block;
   }
   
+  /* On mobile, change the nav-container layout */
+  .nav-container {
+    justify-content: space-between;
+  }
+  /* Remove absolute positioning on mobile */
+  .profile-link {
+    position: static;
+    margin-right: 1rem;
+  }
+  
   /* Make nav-links a sliding panel from the left */
   .nav-links {
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
-    width: 60%; /* Pokes out less */
+    width: 60%;
     background-color: var(--nav-bg-light);
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
@@ -162,12 +186,13 @@ body.dark-mode .menu-toggle {
 body.dark-mode nav {
   background-color: var(--nav-bg-dark);
 }
-
 body.dark-mode .nav-links {
   background-color: var(--nav-bg-dark);
 }
 
-/* Section Styling */
+/* (Remaining CSS for sections, modals, etc. remains unchanged) */
+
+/* --- Section Styling and following code --- */
 section {
   background-color: #f0f0f0;
   padding: 2rem;
@@ -179,7 +204,6 @@ section {
   text-align: center;
   position: relative;
 }
-
 section h2 {
   font-size: 2.5rem;
   color: #333;
@@ -188,26 +212,21 @@ section h2 {
   letter-spacing: 1px;
   font-weight: 600;
 }
-
 section ul {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
 }
-
 section li {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: #444;
   transition: transform 0.3s ease, color 0.3s ease;
 }
-
 section li:hover {
   transform: translateX(10px);
   color: #4caf50;
 }
-
-/* Parallax Background Effect */
 .parallax {
   background: url('your-image.jpg') no-repeat fixed center;
   background-size: cover;
@@ -216,8 +235,6 @@ section li:hover {
   z-index: -1;
   transform: translateZ(0);
 }
-
-/* Hover Effects for Interactive Elements */
 button, a {
   padding: 0.5rem 1rem;
   background-color: var(--button-bg-light);
@@ -228,27 +245,21 @@ button, a {
   font-size: 1.1rem;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
 body.dark-mode button, body.dark-mode a {
   background-color: var(--button-bg-dark);
   color: var(--button-text-dark);
 }
-
 a {
   color: var(--link-color-light);
   text-decoration: none;
 }
-
 body.dark-mode a {
   color: var(--link-color-dark);
 }
-
 button:hover, a:hover {
   background-color: #45a049;
   transform: scale(1.05);
 }
-
-/* Text Styling */
 h1, h2, h3 {
   margin: 0;
   font-size: 2.5rem;
@@ -257,12 +268,9 @@ h1, h2, h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
 p {
   line-height: 1.5;
 }
-
-/* Modal Windows */
 .modal {
   display: none;
   position: fixed;
@@ -273,7 +281,6 @@ p {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
-
 .modal-content {
   background-color: #ffffffff;
   margin: 10% auto;
@@ -282,7 +289,6 @@ p {
   max-width: 600px;
   border-radius: 8px;
 }
-
 .modal-button {
   padding: 10px 20px;
   background-color: #4caf50;
@@ -292,74 +298,56 @@ p {
   border-radius: 5px;
   font-size: 1rem;
 }
-
-/* Smooth Scroll and Parallax Coordination */
 html {
   scroll-behavior: smooth;
 }
-
 .parallax-section {
   height: 100vh;
   overflow: hidden;
 }
-
-/* Dark Mode Styles */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
 }
-
 body.dark-mode header,
 body.dark-mode footer {
   background-color: #333333;
 }
-
 body.dark-mode .parallax {
   background-color: #333333;
   filter: brightness(0.6);
 }
-
 body.dark-mode .container {
   background-color: #121212;
 }
-
 body.dark-mode nav a {
   color: #ffffff;
 }
-
 body.dark-mode section {
   background-color: #181818;
 }
-
 body.dark-mode .skill-bar {
   background-color: #333333;
 }
-
 body.dark-mode .skill-bar-fill {
   background-color: #4caf50;
 }
-
 body.dark-mode .typing-effect {
   color: #ffffff;
 }
-
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3 {
   color: #ffffff;
 }
-
 body.dark-mode p {
   color: #dcdcdc;
 }
-
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-
-/* Apply styles to all sections */
 #skills,
 #experience,
 #hobbies,
@@ -377,7 +365,6 @@ ul {
   text-align: left;
   box-sizing: border-box;
 }
-
 #skills h2,
 #hobbies h2,
 #contact h2,
@@ -392,7 +379,6 @@ ul {
   letter-spacing: 1px;
   font-weight: 600;
 }
-
 #skills ul,
 #hobbies ul,
 #experience ul,
@@ -402,7 +388,6 @@ ul {
   padding-left: 0;
   margin: 0;
 }
-
 #skills li,
 #hobbies li,
 #experience li,
@@ -413,7 +398,6 @@ ul {
   color: #444;
   transition: transform 0.3s ease, color 0.3s ease;
 }
-
 #skills li:hover,
 #experience li:hover,
 #hobbies li:hover,
@@ -422,7 +406,6 @@ ul {
   transform: translateX(10px);
   color: #4caf50;
 }
-
 body.dark-mode #skills,
 body.dark-mode #about,
 body.dark-mode #hobbies,
@@ -433,7 +416,6 @@ body.dark-mode #projects {
   background-color: #2e2e2e;
   color: #e0e0e0;
 }
-
 body.dark-mode #skills h2,
 body.dark-mode #about h2,
 body.dark-mode #hobbies h2,
@@ -443,7 +425,6 @@ body.dark-mode #education h2,
 body.dark-mode #projects h2 {
   color: #ffffff;
 }
-
 body.dark-mode #skills li,
 body.dark-mode #about li,
 body.dark-mode #hobbies li,
@@ -453,7 +434,6 @@ body.dark-mode #education li,
 body.dark-mode #projects li {
   color: #dcdcdc;
 }
-
 body.dark-mode #skills li:hover,
 body.dark-mode #about li:hover,
 body.dark-mode #hobbies li:hover,
