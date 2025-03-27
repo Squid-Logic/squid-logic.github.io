@@ -64,43 +64,42 @@ nav {
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: center; /* Default: center nav-links on desktop */
+  justify-content: space-between;
   padding: 0 1rem;
 }
 
-/* Position the profile icon to the left on desktop */
+/* For screens above mobile, center the nav-links */
 @media screen and (min-width: 769px) {
-  .profile-link {
-    position: absolute;
-    left: 1rem;
+  .nav-container {
+    justify-content: center;
   }
 }
 
-/* Profile Icon Styles */
+/* Profile Icon in Nav */
+.profile-link {
+  display: inline-block;
+}
 .profile-icon {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   background-color: #ffffff;
-  border: 2px solid var(--button-bg-light);
+  border: 1px solid var(--button-bg-light); /* Thinner green border */
   object-fit: cover;
-  max-width: 100%;
-  height: auto;
 }
-
 body.dark-mode .profile-icon {
   background-color: #222222;
   border-color: var(--button-bg-dark);
 }
 
-/* Nav Links as an Unordered List */
+/* Nav Links as an Unordered List (centered on desktop) */
 .nav-links {
   list-style: none;
   display: flex;
   align-items: center;
   margin: 0;
   padding: 0;
-  justify-content: center; /* Center nav items */
+  justify-content: center;
 }
 
 /* Each Link Item */
@@ -108,19 +107,44 @@ body.dark-mode .profile-icon {
   margin: 0 10px;
 }
 
-/* Link Styles */
-.nav-links a {
-  color: #333333;
+/* NAVIGATION LINKS BUTTON STYLE */
+nav a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--button-bg-light);
+  color: var(--button-text-light);
+  border-radius: 5px;
   text-decoration: none;
   font-size: 1.2rem;
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+nav a:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+body.dark-mode nav a {
+  background-color: var(--button-bg-dark);
+  color: var(--button-text-dark);
 }
 
-.nav-links a:hover {
-  color: #000;
+/* Global Link Styling (for non-nav links, now underlined) */
+a {
+  background: transparent;
+  padding: 0;
+  text-decoration: underline;  /* Underline global links */
+  color: var(--link-color-light);
+}
+a:hover {
+ color: #45a049;
+}
+body.dark-mode a {
+  color: var(--link-color-dark);
+}
+body.dark-mode a:hover {
+  color: #45a049;
 }
 
-/* Hamburger Menu Toggle Button - styled like PC nav buttons */
+/* Hamburger Menu Toggle Button - styled like nav links */
 .menu-toggle {
   display: none;
   background-color: var(--button-bg-light);
@@ -143,16 +167,16 @@ body.dark-mode .menu-toggle {
 
 /* Mobile Styles for Navigation */
 @media screen and (max-width: 768px) {
-  /* Show the hamburger toggle button */
+  /* Show hamburger button on mobile */
   .menu-toggle {
     display: block;
   }
   
-  /* On mobile, change the nav-container layout */
+  /* Adjust nav-container layout on mobile */
   .nav-container {
     justify-content: space-between;
   }
-  /* Remove absolute positioning on mobile */
+  /* On mobile, the profile icon loses absolute positioning */
   .profile-link {
     position: static;
     margin-right: 1rem;
@@ -193,9 +217,7 @@ body.dark-mode .nav-links {
   background-color: var(--nav-bg-dark);
 }
 
-/* (Remaining CSS for sections, modals, etc. remains unchanged) */
-
-/* --- Section Styling and following code --- */
+/* Section Styling */
 section {
   background-color: #f0f0f0;
   padding: 2rem;
@@ -230,6 +252,8 @@ section li:hover {
   transform: translateX(10px);
   color: #4caf50;
 }
+
+/* Parallax Background Effect */
 .parallax {
   background: url('your-image.jpg') no-repeat fixed center;
   background-size: cover;
@@ -238,7 +262,9 @@ section li:hover {
   z-index: -1;
   transform: translateZ(0);
 }
-button, a {
+
+/* Hover Effects for Interactive Elements */
+button, a.button-style {
   padding: 0.5rem 1rem;
   background-color: var(--button-bg-light);
   color: var(--button-text-light);
@@ -248,21 +274,16 @@ button, a {
   font-size: 1.1rem;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
-body.dark-mode button, body.dark-mode a {
+body.dark-mode button, body.dark-mode a.button-style {
   background-color: var(--button-bg-dark);
   color: var(--button-text-dark);
 }
-a {
-  color: var(--link-color-light);
-  text-decoration: none;
-}
-body.dark-mode a {
-  color: var(--link-color-dark);
-}
-button:hover, a:hover {
+button:hover, a.button-style:hover {
   background-color: #45a049;
   transform: scale(1.05);
 }
+
+/* Text Styling */
 h1, h2, h3 {
   margin: 0;
   font-size: 2.5rem;
@@ -274,6 +295,8 @@ h1, h2, h3 {
 p {
   line-height: 1.5;
 }
+
+/* Modal Windows */
 .modal {
   display: none;
   position: fixed;
@@ -301,6 +324,8 @@ p {
   border-radius: 5px;
   font-size: 1rem;
 }
+
+/* Smooth Scroll and Parallax Coordination */
 html {
   scroll-behavior: smooth;
 }
@@ -308,6 +333,8 @@ html {
   height: 100vh;
   overflow: hidden;
 }
+
+/* Dark Mode Styles */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
@@ -351,6 +378,8 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+/* Apply styles to all sections */
 #skills,
 #experience,
 #hobbies,
