@@ -1,0 +1,412 @@
+:root {
+  /* Light mode colors */
+  --button-bg-light: #4caf50;
+  --button-text-light: black;
+  --link-color-light: black;
+}
+
+body.dark-mode {
+  /* Dark mode colors */
+  --button-bg-dark: #4caf50;
+  --button-text-dark: white;
+  --link-color-dark: white;
+}
+
+/* General Styles for Light Mode */
+body {
+  background-color: #ffffff;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s, all 0.3s ease;
+  scroll-behavior: smooth; /* Enable smooth scrolling for general page */
+}
+
+/* Main Container */
+.container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header and Footer Styling */
+header, footer {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Navigation Bar Styling */
+nav {
+  background-color: #e0e0e0;
+  padding: 1rem 0;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  color: #333333;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+/* Section Styling */
+section {
+  background-color: #f0f0f0;
+  padding: 2rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+section ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+section li {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #444;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+section li:hover {
+  transform: translateX(10px);
+  color: #4caf50;
+}
+
+/* Parallax Background Effect */
+.parallax {
+  background: url('your-image.jpg') no-repeat fixed center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  z-index: -1; /* Keep content above */
+  transform: translateZ(0); /* Enable parallax effect */
+}
+
+/* Hover Effects for Interactive Elements */
+button, a {
+  padding: 0.5rem 1rem;
+  background-color: var(--button-bg-light);
+  color: var(--button-text-light);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+body.dark-mode button, body.dark-mode a {
+  background-color: var(--button-bg-dark);
+  color: var(--button-text-dark);
+}
+
+a {
+  color: var(--link-color-light);
+  text-decoration: none;
+}
+
+body.dark-mode a {
+  color: var(--link-color-dark);
+}
+
+button:hover, a:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Text Styling */
+h1, h2, h3 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* Skill Bars */
+.skill-bar {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  height: 20px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.skill-bar-fill {
+  background-color: #4caf50;
+  border-radius: 5px;
+  height: 100%;
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+.skill-bar-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Dynamic Typing Effect (Using JavaScript to trigger) */
+.typing-effect {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+  color: #333333;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 0s steps(20) 2s forwards; /* Adjust animation for typing */
+}
+
+@keyframes typing {
+  to {
+    width: 100%;
+  }
+}
+
+/* Modal Windows */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #ffffffff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Smooth Scroll and Parallax Coordination */
+html {
+  scroll-behavior: smooth;
+}
+
+.parallax-section {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Dark Mode Customizations */
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #333333;
+}
+
+body.dark-mode nav {
+  background-color: #222222;
+}
+
+body.dark-mode .parallax {
+  background-color: #333333;
+  filter: brightness(0.6);
+}
+
+body.dark-mode .container {
+  background-color: #121212;
+}
+
+body.dark-mode nav a {
+  color: #ffffff;
+}
+
+body.dark-mode section {
+  background-color: #181818;
+}
+
+body.dark-mode .skill-bar {
+  background-color: #333333;
+}
+
+body.dark-mode .skill-bar-fill {
+  background-color: #4caf50;
+}
+
+body.dark-mode .typing-effect {
+  color: #ffffff;
+}
+
+/* Text Styling for Dark Mode */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #ffffff;
+}
+
+body.dark-mode p {
+  color: #dcdcdc;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply styles to all sections, including skills */
+#skills,
+#experience,
+#hobbies,
+#contact,
+#about,
+#education,
+#projects {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+#skills h2,
+#hobbies h2,
+#contact h2,
+#about h2,
+#experience h2,
+#education h2,
+#projects h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+#skills ul,
+#hobbies ul,
+#experience ul,
+#education ul,
+#projects ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+#skills li,
+#hobbies li,
+#experience li,
+#education li,
+#projects li {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #444;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#skills li:hover,
+#experience li:hover,
+#hobbies li:hover,
+#education li:hover,
+#projects li:hover {
+  transform: translateX(10px);
+  color: #4caf50;
+}
+
+body.dark-mode #skills,
+body.dark-mode #about,
+body.dark-mode #hobbies,
+body.dark-mode #contact,
+body.dark-mode #experience,
+body.dark-mode #education,
+body.dark-mode #projects {
+  background-color: #2e2e2e;
+  color: #e0e0e0;
+}
+
+body.dark-mode #skills h2,
+body.dark-mode #about h2,
+body.dark-mode #hobbies h2,
+body.dark-mode #contact h2,
+body.dark-mode #experience h2,
+body.dark-mode #education h2,
+body.dark-mode #projects h2 {
+  color: #ffffff;
+}
+
+body.dark-mode #skills li,
+body.dark-mode #about li,
+body.dark-mode #hobbies li,
+body.dark-mode #contact li,
+body.dark-mode #experience li,
+body.dark-mode #education li,
+body.dark-mode #projects li {
+  color: #dcdcdc;
+}
+
+body.dark-mode #skills li:hover,
+body.dark-mode #about li:hover,
+body.dark-mode #hobbies li:hover,
+body.dark-mode #contact li:hover,
+body.dark-mode #experience li:hover,
+body.dark-mode #education li:hover,
+body.dark-mode #projects li:hover {
+  color: #4caf50;
+}
