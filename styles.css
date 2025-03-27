@@ -81,10 +81,13 @@ nav {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #ffffff; /* Light mode background */
+  background-color: #ffffff;
   border: 2px solid var(--button-bg-light);
   object-fit: cover;
+  max-width: 100%;
+  height: auto;
 }
+
 body.dark-mode .profile-icon {
   background-color: #222222;
   border-color: var(--button-bg-dark);
