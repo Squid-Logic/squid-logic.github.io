@@ -6,29 +6,32 @@
   <title>Luis Riley - CV</title>
   <!-- External Stylesheet -->
   <link rel="stylesheet" type="text/css" href="styles.css">
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  </head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
 <body>
-  <header>
-    <h1>Luis Riley</h1>
-    <p>Welsh | <span id="age">Loading...</span> Years Old</p>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Luis Riley</h1>
+      <p>Welsh | <span id="age">Loading...</span> Years Old</p>
+      <p class="hero-subtext">Crafting digital experiences that elevate your business.</p>
+      <button class="button hero-button" onclick="document.querySelector('#contact').scrollIntoView()">Contact Me</button>
+    </div>
   </header>
 
+  <!-- Navigation (remains largely the same) -->
   <nav>
     <div class="nav-container">
-	      <a href="#about" class="profile-link">
-      <img src="Luis.png" alt="Profile Icon" class="profile-icon">
-    </a>
+      <a href="#about" class="profile-link">
+        <img src="Luis.png" alt="Profile Icon" class="profile-icon">
+      </a>
       <!-- Hamburger Menu Toggle for Mobile -->
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#hobbies">Hobbies</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
           <!-- Dark Mode Toggle Button -->
@@ -40,51 +43,36 @@
       </ul>
     </div>
   </nav>
+
+  <!-- Main Content Container -->
   <div class="container">
     <section id="about">
       <h2>About Me</h2>
       <p id="typed-text"></p>
     </section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <p><strong>Falmouth University</strong></p>
-      <p>Currently attending Falmouth University for a Computer Science degree.</p>
-    </section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li><i class="devicon-csharp-plain"></i> C#</li>
-    <li><i class="fab fa-js-square"></i> JavaScript/TypeScript</li>
-    <li><i class="devicon-go-original-wordmark"></i> GoLang</li>
-    <li><i class="fab fa-python"></i> Python</li>
-    <li><i class="fab fa-java"></i> Java</li>
-    <li><i class="devicon-neovim-plain"></i> Experience in working with NeoVim</li>
-    <li><i class="fab fa-git-alt"></i> Version Control: Git</li>
-    <li><i class="devicon-unity-plain"></i> Game Development: Unity</li>
-    <li><i class="fab fa-react"></i> Web Development: React.js, Vue.js</li>
-    <li><i class="fab fa-linux"></i> <i class="fab fa-windows"></i> Efficient working in both Windows and Linux environments</li>
-    <li><i class="fas fa-users"></i> Work great in team environments as well as independently</li>
-    <li><i class="fas fa-database"></i> Familiarity with SQLite and database management</li>
-    <li><i class="fas fa-search"></i> Experience with web scraping using Selenium</li>
-    <li><i class="fas fa-code"></i> Object-oriented and functional programming paradigms</li>
-    <li><i class="fab fa-github"></i> Check out some of my projects at <a href="https://github.com/Squid-Logic?tab=repositories"><i class="fab fa-github"></i> My GitHub</a></li>
-  </ul>
-</section>
-
-    <section id="hobbies">
-      <h2>Hobbies</h2>
+    <section id="skills">
+      <h2>Skills</h2>
       <ul>
-        <li>Guitar</li>
-        <li>Gaming</li>
-	<li>Reading</li>
-	<li>Fitness</li>
-	<li>Programming</li>
+        <li><i class="devicon-csharp-plain"></i> C#</li>
+        <li><i class="fab fa-js-square"></i> JavaScript/TypeScript</li>
+        <li><i class="devicon-go-original-wordmark"></i> GoLang</li>
+        <li><i class="fab fa-python"></i> Python</li>
+        <li><i class="fab fa-java"></i> Java</li>
+        <li><i class="devicon-neovim-plain"></i> Experience in working with NeoVim</li>
+        <li><i class="fab fa-git-alt"></i> Version Control: Git</li>
+        <li><i class="devicon-unity-plain"></i> Game Development: Unity</li>
+        <li><i class="fab fa-react"></i> Web Development: React.js, Vue.js</li>
+        <li><i class="fab fa-linux"></i> <i class="fab fa-windows"></i> Efficient working in both Windows and Linux environments</li>
+        <li><i class="fas fa-users"></i> Work great in team environments as well as independently</li>
+        <li><i class="fas fa-database"></i> Familiarity with SQLite and database management</li>
+        <li><i class="fas fa-search"></i> Experience with web scraping using Selenium</li>
+        <li><i class="fas fa-code"></i> Object-oriented and functional programming paradigms</li>
+        <li>Check out some of my projects at <a href="https://github.com/Squid-Logic?tab=repositories"><i class="fab fa-github"></i> My GitHub</a></li>
       </ul>
     </section>
 
-    <section id="contact">
+       <section id="contact">
       <h2>Contact</h2>
       <div class="contact-info">
         <p><strong>Phone:</strong> 07831117718</p>
@@ -105,4 +93,3 @@
   <script src="phoneNav.js"></script>
 </body>
 </html>
-
